@@ -1,0 +1,154 @@
+/* 기본 스타일 */
+body {
+    font-family: 'Helvetica', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    color: black;
+    overflow-x: hidden;
+}
+
+/* 로딩 화면 */
+#loading-screen {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: white;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    font-weight: bold;
+    z-index: 9999;
+}
+
+/* 로딩 숫자 */
+#loading-text {
+    display: inline-block;
+    transition: opacity 0.1s ease-in-out;
+}
+
+/* 메인 콘텐츠 숨김 */
+#main-content {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+/* 로딩 완료 후 메인 콘텐츠 표시 */
+#main-content.loaded {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 헤더 */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    max-width: 1880px;
+    margin: 0 auto;
+}
+
+/* 로고 */
+.logo {
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* 네비게이션 */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* 히어로 섹션 */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 64px;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 18px;
+    color: gray;
+}
+
+/* 포트폴리오 섹션 */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 40px;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* 프로젝트 박스 */
+.project {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* 이미지 스타일 */
+.project img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* 호버 시 DIM 효과 */
+.project:hover img {
+    transform: scale(1.05);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    opacity: 0;
+    transition: background 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* 호버 시 효과 */
+.project:hover .overlay {
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 1;
+}
+
+/* 푸터 */
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+}
